@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.project.dao.UserDAO">
+	
+	<insert id="userjoin" parameterType="my.project.dto.UserDto">
+		insert into userinfo(userid, userpwd, username, userbirth, userphone, usermail, usermajor, userconcentration, userimg) values(#{userid}, #{userpwd}, #{username}, #{userbirth}, #{userphone}, #{usermail}, #{usermajor}, #{userconcentration}, #{userimg})
+	</insert>
+	
+	<select id="userlogin" parameterType="my.project.dto.UserDto" resultType="my.project.dto.UserDto">
+		select * from userinfo where userid=#{userid} AND userpwd=#{userpwd}
+	</select>
+	
+	<insert id="imgtest" parameterType="my.project.test.ImgtestDto">
+		insert into imgtest(imgname) values(#{imgname})
+	</insert>
+	
+	<select id="skilltest" resultType="my.project.test.ProfileSkill">
+		select * from skilltest where userid='ex1'
+	</select>
+	
+	<select id="idcheck" resultType="String">
+		select userid from userinfo where userid = #{userid}
+	</select>
+	
+	<insert id="ProfileInputText" parameterType="my.project.test.ProfileDto">
+		insert into userprofile values('ex1', #{Easy_Profile_name}, #{Easy_profile_content}, #{Skill_name1}, #{Skill_name2}, #{Skill_name3}, #{Skill_Value1}, #{Skill_Value2}, #{Skill_Value3}, #{Education_Main_Name}, #{Education_Sub_Name}, #{Education_Content}, #{Languages1}, #{Languages2}, #{Languages3}, #{Contact_Place}, #{Contact_Phone}, #{Contact_Mail}, #{Contact_Page}, #{Experiences_Main_Name}, #{Experiences_Sub_Name}, #{Experiences_Content} )
+	</insert>
+	
+	<select id="ProfileSelectText" resultType="my.project.test.ProfileDto2" >
+		select * from userprofile where userid = #{userid}
+	</select>
+</mapper>

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrap{
+	width: 100%;
+}
+
+.Header, .content, .Footer{
+	width: 100%;
+	float: left;
+}
+
+.Header, .Footer{
+	height: 8em;
+}
+
+.SideBar2{
+	width: 10%;
+	height: 600px;
+	background-color: #FFBB00;
+	float: left;
+}
+
+.page_content{
+	width: 90%;
+	height: 600px;
+	background-color: #EAEAEA;
+	float: left;
+}
+
+.page_content2{
+	width: 100%;
+	height: auto;
+	background-color: #ffffff;
+	float: left;
+}
+
+.Header{
+	background-color: #ff0000;
+}
+
+.Footer{
+	background-color: #FF00DD;
+}
